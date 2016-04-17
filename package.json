@@ -1,0 +1,25 @@
+{
+  "name": "xiao_loong",
+  "version": "1.0.0",
+  "description": "webpage",
+  "main": "xlApp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Midnightapplepie/WP-yum.git"
+  },
+  "author": "Kevin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Midnightapplepie/WP-yum/issues"
+  },
+  "homepage": "https://github.com/Midnightapplepie/WP-yum#readme",
+  "dependencies": {
+    "csv": "^0.4.6",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "mongodb": "^2.1.16"
+  }
+}
