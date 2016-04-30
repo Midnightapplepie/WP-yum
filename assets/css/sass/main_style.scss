@@ -1,0 +1,280 @@
+$beige: #d5e5da;
+body *{
+	box-sizing: border-box;
+}
+
+body{
+	background: black;
+}
+
+.view-width{
+	width: 1200px;
+	margin: auto;
+	position: relative;
+	display: block;
+	text-align: center;
+}
+
+.h-60pc{
+	height: 70%;
+}
+
+.header-wrapper{
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    background: rgba(1,1,1,0.2);
+    box-shadow: 0px 2px 2px #000000;
+    color: white;
+    z-index: 1;
+
+    header{
+    	height: 100%;
+    }
+
+
+	.fl-l{
+		float: left;
+		height: 100%;
+	}
+
+	div{
+		display: inline-block;
+		margin: auto
+	}
+
+   	.abs-vertical{
+		position: absolute;
+		top:0;
+		bottom: 0;
+	}
+	.header-logo{
+		height: 100%;
+		width: 30%;
+		display: inline-flex;
+
+		img{
+			width: auto;
+			display: block;
+			height: 50%;
+			margin: auto;
+		}
+	}
+
+	.header-title{
+		width: 40%;
+		text-align: center;
+		font-size: 	2em;
+		display: inline-flex;
+
+		div{
+			margin: auto;
+		}
+	}
+
+	.header-right{
+		width: 30%;
+		display: inline-flex;
+
+    	.header-menu-btn{
+    		margin: auto;
+    		width: 50px;
+    		height: 50px;
+    		display: inline-flex;
+
+    		.bars{
+    			height: auto;
+    			width: 100%;			
+	    		line-height: 10px;
+	    		margin: auto;
+	    		text-align: center;
+
+	    		.bar{
+	    			width: 70%;
+	    			height: 0px;
+	    			border: 3px solid black;
+    			}
+    		}
+    	}
+	}
+}
+
+.w-100-ib{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+
+	.home-img-container{
+		text-align: center;
+		overflow: hidden;
+		position: relative;
+
+		.filter{
+			position: absolute;
+		}
+
+		.home-img.filter{
+			display: block;
+			background: rgba(0,0,0,0.5)
+		}
+
+		.left-filter{
+			
+		}		
+		.right-filter{
+
+		}
+
+		.banner-img{
+			background: url("../images/banner_1a.jpg");
+		}
+
+		.home-img{
+			width: 100%;
+			height: 100%;
+			display: inline-block;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+		}
+	}
+
+
+
+	.nav-icons-container{
+		padding: 3em;
+		display: inline-block;
+
+		.nav-item{
+			height: auto;
+			display: inline-block;
+			float: left;
+			position: relative;
+			text-align: center;
+			margin-right: 2em;
+			border: 2px solid white;
+
+			a{
+				display: inline-block; 
+				color: black;
+				height: 200px;
+				width: 200px;
+				text-decoration: none;
+				font-weight: bold;
+				border: 5px solid black;
+				background: black;
+				text-align: center;
+				position: relative;
+
+				p{	
+					font-size: 1.5em;
+					color: white;
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 0;
+				}
+
+				*{
+					box-sizing:border-box;
+				}
+
+				.plate{
+					width: 50%;
+					height: 50%;
+					display: inline-block;
+					position: relative;
+
+					.outter-circle{		
+						height: 100%;
+						width: 100%;	
+						border: 0.6em solid white;
+						border-radius: 50%;
+						text-align: center;
+						display: inline-flex;
+
+						.inner-circle{
+							width: 40%;
+							height: 40%;
+							border: 2px solid white;
+							border-radius: 50%;
+							margin: auto;
+						}
+					}
+
+
+				}
+
+				.chapsticks{
+					float: right;
+					width: 40%;
+					height: 50%;
+					display: inline-flex;
+
+					div{
+						width: 0px;
+						height: 80%;
+						margin: auto 0.1em;
+						border: 2px solid white;
+						display: inline-block;
+					}
+				}
+
+				.bg-blk{
+					background: black;
+					height: 100%;
+					width: 100%;
+					text-align: center;
+					position: relative;
+
+					*{
+						transition: 0.5s;
+					}
+
+					&:hover{
+						background: $beige;
+						transition: 0.5s;
+
+						img{
+							background: black;
+						}
+
+						p{
+							color: black;
+						}
+					}
+
+
+					img{
+						padding: 0.25em;
+						margin-top: 30%;
+						width: 30%;
+						height: auto;
+						border: 1px solid white;
+					}
+				}
+
+				i,.info-i{
+					color: white;
+					width: 50%;
+					height: 50%;
+					float: left;
+					position: relative;
+				}
+
+				i{
+					font-size: 3em;
+					line-height: 2em;
+				}
+			}
+		}
+	}
+
+}
+
+.footer{
+	background: black;
+	width: 100%;
+	height: 12%;
+
+}

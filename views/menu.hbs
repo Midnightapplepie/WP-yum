@@ -1,0 +1,65 @@
+<div id="menu">
+	<div class="tabs">
+		<div class="tab" data-category="appetizers">Appetizers</div>
+		<div class="tab" data-category="beef_lamb_pork">Beef, Lamb, Pork</div>
+		<div class="tab" data-category="chicken">Chicken</div>
+		<div class="tab" data-category="seafood">Seafood</div>
+		<div class="tab" data-category="soup">Soup</div>
+		<div class="tab" data-category="vegetables">Vegetables</div>
+	</div>
+	<div class="itemList">
+		<div id="appetizers" class="category">
+			{{#each data.appetizer}}
+				{{> item}}
+			{{/each}}
+		</div>
+		<div id="beef_lamb_pork" class="category">
+			<div id="beef">
+				{{#each data.beef}}
+					{{>item}}
+				{{/each}}
+			</div>
+			<div id ="pork">
+				{{#each data.pork}}
+					{{>item}}
+				{{/each}}
+			</div>
+			<div id="lamb">
+				{{#each data.lamb}}
+					{{>item}}
+				{{/each}}
+			</div>
+		</div>
+		<div id ="chicken" class="category">
+			{{#each data.chicken}}
+				{{>item}}
+			{{/each}}
+		</div>
+		<div id="seafood" class="category">
+			{{#each data.seafood}}
+				{{>item}}
+			{{/each}}
+		</div>
+		<div id="soup" class="category">
+			{{#each data.soup}}
+				{{>item}}
+			{{/each}}
+		</div>
+		<div id="vegetables" class="category">
+			{{#each data.vegetables}}
+				{{>item}}
+			{{/each}}
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var tabs = $(".tabs");
+	tabs.click(function(e){
+		if($(e.target).attr('class').indexOf('tab') >  -1){
+			$(e.target).click(function(e){
+				var id 
+			})
+		}
+	})
+</script>
