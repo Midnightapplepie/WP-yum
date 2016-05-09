@@ -1,4 +1,9 @@
 $beige: #d5e5da;
+$green: #90C5A9;
+$blue: #C7D0D5;
+$gold: #F9A646;
+$gray: #6e6e6e;
+
 body *{
 	box-sizing: border-box;
 }
@@ -23,15 +28,12 @@ body{
     width: 100%;
     height: 10%;
     position: absolute;
-    background: rgba(1,1,1,0.2);
-    box-shadow: 0px 2px 2px #000000;
     color: white;
     z-index: 1;
 
     header{
     	height: 100%;
     }
-
 
 	.fl-l{
 		float: left;
@@ -53,11 +55,16 @@ body{
 		width: 30%;
 		display: inline-flex;
 
-		img{
+		a{
 			width: auto;
 			display: block;
 			height: 50%;
 			margin: auto;
+
+			img{
+				height: 100%;
+				width: auto;
+			}
 		}
 	}
 
@@ -126,7 +133,7 @@ body{
 		}
 
 		.banner-img{
-			background: url("../images/banner_1a.jpg");
+			background: url("../../images/banner_1a.jpg");
 		}
 
 		.home-img{
@@ -154,6 +161,43 @@ body{
 			margin-right: 2em;
 			border: 2px solid white;
 
+		#xl-info:hover{
+			background-color: white;
+			color: black;
+			transition: 0.5s;
+
+			i{
+				border-radius:20px;
+				width: 45%;
+				height: 45%;
+				margin: 2.5%;
+				line-height: 1.8em;
+				transition: 0.5s;
+			}
+
+			.fa-phone{
+				background-color: $gold;
+			}
+			.fa-clock-o{
+				background-color: $blue;
+			}
+			.fa-map-marker{
+				background-color: $green;
+			}
+
+			.info-i p{
+				transition: 0.5s;
+				color: black;
+			}
+		}
+
+			#reserve:hover{
+
+				.chapsticks #chop{
+					transform: rotate(-15deg);
+				}
+			}
+
 			a{
 				display: inline-block; 
 				color: black;
@@ -165,6 +209,7 @@ body{
 				background: black;
 				text-align: center;
 				position: relative;
+				transition: 0.5s;
 
 				p{	
 					font-size: 1.5em;
@@ -184,6 +229,8 @@ body{
 					height: 50%;
 					display: inline-block;
 					position: relative;
+					float: left;
+					margin: 1em 0.5em 0 20%;
 
 					.outter-circle{		
 						height: 100%;
@@ -202,14 +249,14 @@ body{
 						}
 					}
 
-
 				}
 
 				.chapsticks{
-					float: right;
-					width: 40%;
+					float: left;
+					width: 10%;
 					height: 50%;
 					display: inline-flex;
+					margin-top: 1em;
 
 					div{
 						width: 0px;

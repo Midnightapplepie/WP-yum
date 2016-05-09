@@ -1,4 +1,12 @@
-<h1>{{name}}</h1>
-<h2>{{price}}</h2>
-<p>{{description}}</p>
-<p>{{spicy}}</p>
+<div class="item-container">
+	{{#if spicy}}
+		<div class="item-name-container">
+			<h1 class="item-name">{{name}}</h1>
+			<p class="item-spicy">{{spicy}}</p>
+		</div>
+	{{else}}
+		<h1 class="item-name">{{name}}</h1>
+	{{/if}}
+		<h2 class="item-price">{{price}}</h2>
+		<p class="item-desc">{{description}}</p>
+</div>

@@ -10,16 +10,18 @@ app.use(sassMiddleware({
 	src: __dirname + "/assets/css/sass",
 	dest: __dirname + "/assets/css/sass_compiled",
 	debug: true,
+	force: true,
+	sourceMap: true,
 	outputStyle: 'compressed',
-	prefix:"/sass_compiled"
+	prefix:"/css/sass_compiled"
 }))
 
+//add assets folder
+app.use(express.static(path.join(__dirname + "/assets")));
 //adding menu
 app.locals.menu = require("./assets/js/menu.js");
 app.locals.menu.loadFile();
 
-//add assets folder
-app.use(express.static(path.join(__dirname + "/assets")));
 
 //view setting
 app.engine('hbs',exphbs({defaultLayout: 'layout'}));
