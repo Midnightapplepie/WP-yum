@@ -1,87 +1,114 @@
 <link rel="stylesheet" href="/css/sass_compiled/menu_style.css">
-<div class="menu-container">
-	<div class="h-30pc">
-		
+<div class="mdl-layout mdl-js-layout h-auto">
+	<div class="home-image-container">
 	</div>
-	<div id="menu">
-		<div class="view-width">
-			<div class="tabs">
-				<div class="tab">
-					<div class="lunch-dinner-btn">Lunch</div>
-					<div class="lunch-dinner-btn">Dinner</div>
+	<header class="mdl-layout__header mg-top-30pc">
+		<div class="mdl-layout-icon"></div>
+		<div class="mdl-layout__header-row">
+			<div class="item-filter-btn">
+  				<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect">
+  					<i class="material-icons">add</i>
+				</button>
+  			</div>
+   		</div>
+	</header>
+	<div class="mdl-layout__drawer">
+  	</div>
+  	<main class="mdl-layout__content">
+  		<div class="mdl-grid">
+  			<div class="item-filter mdl-cell mdl-cell--3-col ">
+  				<div class="mdl-shadow--6dp">
+  					<div class="tabs">
+						<ul class="tab">
+							<li class="tab">
+								<div class="lunch-dinner-btn"><button class="mdl-button mdl-js-button">Lunch</button></div>
+								<div class="lunch-dinner-btn"><button class="mdl-button mdl-js-button">Dinner</button></div>
+							</li>
+							<li class="tab" data-category="appetizers"><button class="mdl-button mdl-js-button">Appetizers</button></li>
+							<li class="tab" data-category="beef"><button class="mdl-button mdl-js-button">Beef</button></li>
+							<li class="tab" data-category="lamb"><button class="mdl-button mdl-js-button">Lamb</button></li>
+							<li class="tab" data-category="pork"><button class="mdl-button mdl-js-button">Pork</button></li>
+							<li class="tab" data-category="chicken"><button class="mdl-button mdl-js-button">Chicken</button></li>
+							<li class="tab" data-category="seafood"><button class="mdl-button mdl-js-button">Seafood</button></li>
+							<li class="tab" data-category="soup"><button class="mdl-button mdl-js-button">Soup</button></li>
+							<li class="tab" data-category="vegetables"><button class="mdl-button mdl-js-button">Vegetables</button></li>
+						</ul>
+  					</div>
+  				</div>
+  			</div>
+  			<div class="mdl-cell mdl-cell--6-col item-list mdl-shadow--2dp">
+		    	<div class="itemList">
+					<div id="appetizers" class="category active-category">
+						<ul>
+							{{#each data.appetizer}}
+							<li>{{> item}}</li>
+							{{/each}}
+						</ul>
+					</div>
+					<div id="beef" class="category">
+						<ul>
+							{{#each data.beef}}
+							<li>{{>item}}</li>
+							{{/each}}
+						</ul>
+					</div>
+					<div id ="pork" class="category">
+						<ul>
+							{{#each data.pork}}
+							<li>{{>item}}</li>
+							{{/each}}
+						</ul>
+					</div>
+					<div id="lamb" class="category">
+						<ul>
+							{{#each data.lamb}}
+							<li>{{>item}}</li>
+							{{/each}}
+						</ul>
+					</div>
+					<div id ="chicken" class="category">
+						<ul>
+							{{#each data.chicken}}
+							<li>{{>item}}</li>
+							{{/each}}
+						</ul>
+					</div>
+					<div id="seafood" class="category">
+						<ul>
+							{{#each data.seafood}}
+							<li>{{>item}}</li>
+							{{/each}}
+						</ul>
+					</div>
+					<div id="soup" class="category">
+						<ul>
+							{{#each data.soup}}
+							<li>{{>item}}</li>
+							{{/each}}
+						</ul>
+					</div>
+					<div id="vegetables" class="category">
+						<ul>
+							{{#each data.vegetables}}
+							<li>{{>item}}</li>
+							{{/each}}
+						</ul>
+					</div>
 				</div>
-				<div class="tab" data-category="appetizers">Appetizers</div>
-				<div class="tab" data-category="beef">Beef</div>
-				<div class="tab" data-category="lamb">Lamb</div>
-				<div class="tab" data-category="pork">Pork</div>
-				<div class="tab" data-category="chicken">Chicken</div>
-				<div class="tab" data-category="seafood">Seafood</div>
-				<div class="tab" data-category="soup">Soup</div>
-				<div class="tab" data-category="vegetables">Vegetables</div>
-			</div>
-			<div class="itemList">
-				<div id="appetizers" class="category active-category">
-					{{#each data.appetizer}}
-						{{> item}}
-					{{/each}}
-				</div>
-				<div id="beef" class="category">
-					{{#each data.beef}}
-						{{>item}}
-					{{/each}}
-				</div>
-				<div id ="pork" class="category">
-					{{#each data.pork}}
-						{{>item}}
-					{{/each}}
-				</div>
-				<div id="lamb" class="category">
-					{{#each data.lamb}}
-						{{>item}}
-					{{/each}}
-				</div>
-				<div id ="chicken" class="category">
-					{{#each data.chicken}}
-						{{>item}}
-					{{/each}}
-				</div>
-				<div id="seafood" class="category">
-					{{#each data.seafood}}
-						{{>item}}
-					{{/each}}
-				</div>
-				<div id="soup" class="category">
-					{{#each data.soup}}
-						{{>item}}
-					{{/each}}
-				</div>
-				<div id="vegetables" class="category">
-					{{#each data.vegetables}}
-						{{>item}}
-					{{/each}}
-				</div>
-			</div>
-		</div>
-	</div>
+		    	<div class="huge-content">
+
+		    	</div>
+  			</div>
+  			<div class="mdl-cell mdl-cell--3-col">2</div>
+    	</div>
+  	</main>
 </div>
-
 <script type="text/javascript">
-
-	$(".tabs").click(function(e){
-		var active = $(".active-category");
-		var el = e.target;
-		var cat;
-
-		if($(el).hasClass("tab")){
-			cat = "#" + $(el).data("category");
-			$(cat).toggleClass("active-category");
-			active.toggleClass("active-category");
+	var fixHeaderTriggerY = Math.floor($(".mdl-layout__header").offset());
+	$(document).scroll(function(e){
+		var y = $(document).scrollTop();
+		if(fixHeaderTriggerY === y){
 
 		}
-	})
-
-	$(document).scroll(function(e){
-		var scrolled = $(document).scrollTop();
-		$(".menu-container").css("background-position","0px "+ (scrolled*0.5 - 100) +"px")
 	})
 </script>
