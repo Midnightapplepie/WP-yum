@@ -31,10 +31,16 @@ ul{
 
 		.mdl-layout__header-row{
 			text-align: center;
+			overflow: hidden;
+			padding: 0;
 
 			.menu-bar-icon{
 				width: auto;
+				top: 100%;
+				left: 50%;
 				height: 60%;
+				position: relative;
+				transition: 0.15s ease-out;
 			}
 		}
 	}
@@ -79,10 +85,47 @@ ul{
 		}
 
 		.item-list{
+
+			.category{
+				display: none;
+			}
+
+			.active-category{
+				display: block!important;
+			}
+
 			li{
 				/*border-bottom: 1px solid black;*/
 				padding: 1em 2em;
 				margin-bottom: 1em;
+
+				.item-container{
+
+					.item-name, .item-price{
+						display: inline-block;
+						float: left;
+						font-weight: 400;
+						margin: 0.75em 0;
+					}
+
+					.item-name{
+						width: 80%;
+						font-size: 24px;
+
+						p{
+							display: inline-block;
+							margin: 0 0 0 2em;
+						}
+					}
+					.item-price{
+						width: 20%;
+						font-size: 24px;
+					}
+
+					p{
+						clear: both;
+					}
+				}
 			}
 		}
 	}

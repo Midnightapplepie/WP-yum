@@ -4,27 +4,27 @@
 	</div>
 	<header class="mdl-layout__header mg-top-30pc">
 		<div class="mdl-layout__header-row">
-		    <img class="menu-bar-icon" src="images/xl_logo.png"/>
-			<div class="item-filter-btn">
-  				<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect">
-  					<i class="material-icons">add</i>
-				</button>
-  			</div>
+			<div class="mdl-cell mdl-cell--1-col"></div>
+			<div class="item-filter mdl-cell mdl-cell--2-col ">
+				<div class="lunch-dinner-btn"><button class="mdl-button mdl-js-button">Lunch</button></div>
+				<div class="lunch-dinner-btn"><button class="mdl-button mdl-js-button">Dinner</button></div>
+			</div>
+			<div class="mdl-cell mdl-cell--6-col item-list">
+		    	<img class="menu-bar-icon" src="images/xl_logo.png"/>
+		    </div>
+		    <div class="mdl-cell mdl-cell--3-col">2</div>
    		</div>
 	</header>
 	<div class="mdl-layout__drawer">
   	</div>
   	<main class="mdl-layout__content">
   		<div class="mdl-grid">
-  			<div class="item-filter mdl-cell mdl-cell--3-col ">
+  		    <div class="mdl-cell mdl-cell--1-col"></div>
+  			<div class="item-filter mdl-cell mdl-cell--2-col ">
   				<div class="mdl-shadow--2dp">
   					<div class="tabs">
 						<ul class="tab">
-							<li class="tab">
-								<div class="lunch-dinner-btn"><button class="mdl-button mdl-js-button">Lunch</button></div>
-								<div class="lunch-dinner-btn"><button class="mdl-button mdl-js-button">Dinner</button></div>
-							</li>
-							<li class="tab" data-category="appetizers"><button class="mdl-button mdl-js-button">Appetizers</button></li>
+							<li class="tab active-filter" data-category="appetizers"><button class="mdl-button mdl-js-button">Appetizers</button></li>
 							<li class="tab" data-category="beef"><button class="mdl-button mdl-js-button">Beef</button></li>
 							<li class="tab" data-category="lamb"><button class="mdl-button mdl-js-button">Lamb</button></li>
 							<li class="tab" data-category="pork"><button class="mdl-button mdl-js-button">Pork</button></li>
@@ -37,8 +37,8 @@
   				</div>
   			</div>
   			<div class="mdl-cell mdl-cell--6-col item-list">
-		    	<div class="itemList">
-					<div id="appetizers" class="category active-category mdl-shadow--2dp">
+		    	<div class="itemList mdl-shadow--2dp">
+					<div id="appetizers" class="category active-category">
 						<ul>
 							{{#each data.appetizer}}
 							<li class="">{{> item}}</li>
@@ -96,16 +96,48 @@
 					</div>
 				</div>
   			</div>
-  			<div class="mdl-cell mdl-cell--3-col">2</div>
+  			<div class="mdl-cell mdl-cell--3-col"></div>
     	</div>
   	</main>
 </div>
 <script type="text/javascript">
-	var fixHeaderTriggerY = Math.floor($(".mdl-layout__header").offset());
-	$(document).scroll(function(e){
-		var y = $(document).scrollTop();
-		if(fixHeaderTriggerY === y){
+var Menu = {}
+Menu.topImage = $(".header-logo img");
+Menu.page = $(document);
+Menu.barImage = $(".menu-bar-icon");
+Menu.menu = $(".item-filter");
 
-		}
-	})
+Menu.page.scroll(function(){
+	Menu.topImage.css("bottom","100px");
+	if(Menu.page.scrollTop() === 0){
+		Menu.barImage.css("top","100%");
+		Menu.barImage.css("opacity","0.1");
+	}else{
+		Menu.barImage.css("top","0");
+		Menu.barImage.css("opacity","1")
+	}
+})
+
+function updateMenu(ele,cat){
+	if(!ele.hasClass("active-filter")){
+		$(".active-filter").removeClass("active-filter");
+		ele.addClass("active-filter");
+		$(".active-category").removeClass("active-category");
+		$("#" + cat).addClass("active-category");
+	}
+}
+
+function toggleLunchDinner(){
+
+}
+
+Menu.menu.click(function(e){
+	var ele = $(e.target).parent();
+	var cat = ele.data("category");
+
+	if(ele.data("category")){
+		updateMenu(ele,cat);
+	}
+
+})
 </script>

@@ -1,12 +1,11 @@
 <div class="item-container">
 	{{#if spicy}}
 		<div class="item-name-container">
-			<h3 class="item-name">{{name}}</h3>
-			<p class="item-spicy">{{spicy}}</p>
+			<div class="item-name">{{name}} <p class="item-spicy">{{spicy}}</p></div>
 		</div>
 	{{else}}
-		<h3 class="item-name">{{name}}</h3>
+		<div class="item-name">{{name}}</div>
 	{{/if}}
-		<h4 class="item-price">{{price}}</h4>
+		<div class="item-price">{{price}}</div>
 		<p class="item-desc">{{description}}</p>
 </div>
