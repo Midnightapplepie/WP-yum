@@ -3,8 +3,8 @@
 	<div class="home-image-container">
 	</div>
 	<header class="mdl-layout__header mg-top-30pc">
-		<div class="mdl-layout-icon"></div>
 		<div class="mdl-layout__header-row">
+		    <img class="menu-bar-icon" src="images/xl_logo.png"/>
 			<div class="item-filter-btn">
   				<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect">
   					<i class="material-icons">add</i>
@@ -17,7 +17,7 @@
   	<main class="mdl-layout__content">
   		<div class="mdl-grid">
   			<div class="item-filter mdl-cell mdl-cell--3-col ">
-  				<div class="mdl-shadow--6dp">
+  				<div class="mdl-shadow--2dp">
   					<div class="tabs">
 						<ul class="tab">
 							<li class="tab">
@@ -36,61 +36,61 @@
   					</div>
   				</div>
   			</div>
-  			<div class="mdl-cell mdl-cell--6-col item-list mdl-shadow--2dp">
+  			<div class="mdl-cell mdl-cell--6-col item-list">
 		    	<div class="itemList">
-					<div id="appetizers" class="category active-category">
+					<div id="appetizers" class="category active-category mdl-shadow--2dp">
 						<ul>
 							{{#each data.appetizer}}
-							<li>{{> item}}</li>
+							<li class="">{{> item}}</li>
 							{{/each}}
 						</ul>
 					</div>
 					<div id="beef" class="category">
 						<ul>
 							{{#each data.beef}}
-							<li>{{>item}}</li>
+							<li class="">{{>item}}</li>
 							{{/each}}
 						</ul>
 					</div>
 					<div id ="pork" class="category">
 						<ul>
 							{{#each data.pork}}
-							<li>{{>item}}</li>
+							<li class="">{{>item}}</li>
 							{{/each}}
 						</ul>
 					</div>
 					<div id="lamb" class="category">
 						<ul>
 							{{#each data.lamb}}
-							<li>{{>item}}</li>
+							<li class="">{{>item}}</li>
 							{{/each}}
 						</ul>
 					</div>
 					<div id ="chicken" class="category">
 						<ul>
 							{{#each data.chicken}}
-							<li>{{>item}}</li>
+							<li class="">{{>item}}</li>
 							{{/each}}
 						</ul>
 					</div>
 					<div id="seafood" class="category">
 						<ul>
 							{{#each data.seafood}}
-							<li>{{>item}}</li>
+							<li class="">{{>item}}</li>
 							{{/each}}
 						</ul>
 					</div>
 					<div id="soup" class="category">
 						<ul>
 							{{#each data.soup}}
-							<li>{{>item}}</li>
+							<li class="">{{>item}}</li>
 							{{/each}}
 						</ul>
 					</div>
 					<div id="vegetables" class="category">
 						<ul>
 							{{#each data.vegetables}}
-							<li>{{>item}}</li>
+							<li class="">{{>item}}</li>
 							{{/each}}
 						</ul>
 					</div>
