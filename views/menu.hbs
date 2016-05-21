@@ -5,14 +5,16 @@
 	<header class="mdl-layout__header mg-top-30pc">
 		<div class="mdl-layout__header-row">
 			<div class="mdl-cell mdl-cell--1-col"></div>
-			<div class="item-filter mdl-cell mdl-cell--2-col ">
-				<div class="lunch-dinner-btn"><button class="mdl-button mdl-js-button">Lunch</button></div>
-				<div class="lunch-dinner-btn"><button class="mdl-button mdl-js-button">Dinner</button></div>
+			<div class="item-filter mdl-cell mdl-cell--2-col h-100pc">
+				<dir class="va-middle-abs btn-container">
+					<div class="lunch-dinner-btn"><button class="mdl-button mdl-js-button mdl-button--raised">Lunch</button></div>
+					<div class="lunch-dinner-btn"><button class="mdl-button mdl-js-button mdl-button--raised active">Dinner</button></div>
+				</dir>
 			</div>
-			<div class="mdl-cell mdl-cell--6-col item-list">
+			<div class="mdl-cell mdl-cell--6-col ta h-100pc">
 		    	<img class="menu-bar-icon" src="images/xl_logo.png"/>
 		    </div>
-		    <div class="mdl-cell mdl-cell--3-col">2</div>
+		    <div class="mdl-cell mdl-cell--3-col"></div>
    		</div>
 	</header>
 	<div class="mdl-layout__drawer">
@@ -111,10 +113,11 @@ Menu.page.scroll(function(){
 	Menu.topImage.css("bottom","100px");
 	if(Menu.page.scrollTop() === 0){
 		Menu.barImage.css("top","100%");
-		Menu.barImage.css("opacity","0.1");
+		Menu.barImage.css("opacity","0");
 	}else{
 		Menu.barImage.css("top","0");
-		Menu.barImage.css("opacity","1")
+		Menu.barImage.css("bottom","0");
+		Menu.barImage.css("opacity","1");
 	}
 })
 
@@ -128,8 +131,13 @@ function updateMenu(ele,cat){
 }
 
 function toggleLunchDinner(){
-
+	$(".lunch-dinner-btn").click(function(e){
+		$(".lunch-dinner-btn .active").removeClass("active");
+		$(e.target).addClass("active");
+	})
 }
+
+toggleLunchDinner();
 
 Menu.menu.click(function(e){
 	var ele = $(e.target).parent();
