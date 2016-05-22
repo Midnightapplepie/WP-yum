@@ -2,7 +2,7 @@
 <div class="mdl-layout mdl-js-layout h-auto">
 	<div class="home-image-container">
 	</div>
-	<header class="mdl-layout__header mg-top-30pc">
+	<header id="menu-bar" class="mdl-layout__header mg-top-30pc">
 		<div class="mdl-layout__header-row">
 			<div class="mdl-cell mdl-cell--1-col"></div>
 			<div class="item-filter mdl-cell mdl-cell--2-col h-100pc">
@@ -19,11 +19,11 @@
 	</header>
 	<div class="mdl-layout__drawer">
   	</div>
-  	<main class="mdl-layout__content">
+  	<main id="menu-content" class="mdl-layout__content">
   		<div class="mdl-grid">
   		    <div class="mdl-cell mdl-cell--1-col"></div>
   			<div class="item-filter mdl-cell mdl-cell--2-col ">
-  				<div class="mdl-shadow--2dp">
+  				<div id="menu-categories" class="mdl-shadow--2dp">
   					<div class="tabs">
 						<ul class="tab">
 							<li class="tab active-filter" data-category="appetizers"><button class="mdl-button mdl-js-button">Appetizers</button></li>
@@ -40,62 +40,23 @@
   			</div>
   			<div class="mdl-cell mdl-cell--6-col item-list">
 		    	<div class="itemList mdl-shadow--2dp">
-					<div id="appetizers" class="category active-category">
-						<ul>
-							{{#each data.appetizer}}
-							<li class="">{{> item}}</li>
-							{{/each}}
-						</ul>
-					</div>
-					<div id="beef" class="category">
-						<ul>
-							{{#each data.beef}}
-							<li class="">{{>item}}</li>
-							{{/each}}
-						</ul>
-					</div>
-					<div id ="pork" class="category">
-						<ul>
-							{{#each data.pork}}
-							<li class="">{{>item}}</li>
-							{{/each}}
-						</ul>
-					</div>
-					<div id="lamb" class="category">
-						<ul>
-							{{#each data.lamb}}
-							<li class="">{{>item}}</li>
-							{{/each}}
-						</ul>
-					</div>
-					<div id ="chicken" class="category">
-						<ul>
-							{{#each data.chicken}}
-							<li class="">{{>item}}</li>
-							{{/each}}
-						</ul>
-					</div>
-					<div id="seafood" class="category">
-						<ul>
-							{{#each data.seafood}}
-							<li class="">{{>item}}</li>
-							{{/each}}
-						</ul>
-					</div>
-					<div id="soup" class="category">
-						<ul>
-							{{#each data.soup}}
-							<li class="">{{>item}}</li>
-							{{/each}}
-						</ul>
-					</div>
-					<div id="vegetables" class="category">
-						<ul>
-							{{#each data.vegetables}}
-							<li class="">{{>item}}</li>
-							{{/each}}
-						</ul>
-					</div>
+		    		{{#each data}}
+		    			<div id="{{@key}}" class="category">
+		    					<ul>
+		    					<li class="title mdl-shadow--4dp">{{@key}}</li>
+		    					{{#each this}}
+		    						{{#if lunch}}
+		    							<li class="lunch hidden">{{> lunch_item}}</li>
+		    						{{/if}}
+
+		    						<li class="dinner">{{> item}}</li>
+		    					{{/each}}
+		    				</ul>
+		    			</div>
+		    		{{/each}}
+		    		<script type="text/javascript">
+		    			$("#appetizer").addClass("active-category")
+		    		</script>
 				</div>
   			</div>
   			<div class="mdl-cell mdl-cell--3-col"></div>
@@ -108,8 +69,10 @@ Menu.topImage = $(".header-logo img");
 Menu.page = $(document);
 Menu.barImage = $(".menu-bar-icon");
 Menu.menu = $(".item-filter");
+Menu.meunBarMgTop =  $("#menu-bar").css("margin-top").replace("px","")*1;
 
 Menu.page.scroll(function(){
+
 	Menu.topImage.css("bottom","100px");
 	if(Menu.page.scrollTop() === 0){
 		Menu.barImage.css("top","100%");
@@ -118,6 +81,19 @@ Menu.page.scroll(function(){
 		Menu.barImage.css("top","0");
 		Menu.barImage.css("bottom","0");
 		Menu.barImage.css("opacity","1");
+	}
+
+	if(Menu.page.scrollTop() > Menu.meunBarMgTop){
+		$("#menu-bar").addClass("po-fx");
+		$("#menu-bar").removeClass("mg-top-30pc");
+		$("#menu-content").css("top", $("#menu-bar").height() + Menu.meunBarMgTop);
+
+	}else{
+		$("#menu-bar").removeClass("po-fx");
+		$("#menu-bar").addClass("mg-top-30pc");
+		$("#menu-content").css("top",0);
+
+
 	}
 })
 
@@ -132,6 +108,12 @@ function updateMenu(ele,cat){
 
 function toggleLunchDinner(){
 	$(".lunch-dinner-btn").click(function(e){
+		if(!$(e.target).hasClass("active")){
+			console.log("change lunch/dinner")
+			$(".lunch").toggleClass("hidden");
+			$(".dinner").toggleClass("hidden");
+		}
+
 		$(".lunch-dinner-btn .active").removeClass("active");
 		$(e.target).addClass("active");
 	})

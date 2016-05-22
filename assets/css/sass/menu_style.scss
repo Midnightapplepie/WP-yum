@@ -14,7 +14,7 @@ ul{
 	padding: 0;
 	margin: 0;
 }
-
+.h
 .header-home-btn{
 	height: 100%;
 	width: auto;
@@ -113,11 +113,20 @@ ul{
 		.item-list{
 
 			.category{
-				display: none;
-			}
+				display: block;
 
-			.active-category{
-				display: block!important;
+				.title{
+					font-size: 2em;
+					text-transform: uppercase;
+					background: $darkGrey;
+					color: white;
+					text-align:center;
+					line-height: normal;
+					padding: 0.5em 0em;
+					width: 101%;
+    				right: 0.5%;
+    				position: relative;
+				}
 			}
 
 			li{

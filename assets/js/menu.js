@@ -15,17 +15,7 @@ function Menu(){
 		"vegetables":[],
 		"mein_fun":[],
 		"fried_rice":[],
-		"rice":[],
-		"lunch_groups":{
-			"seafood":[],
-			"beef":[],
-			"lamb":[],
-			"pork":[],
-			"chicken":[],
-			"vegetables":[],
-			"mein_fun":[],
-			"fried_rice":[]
-		}
+		"rice":[]
 	};
 
 	this.generateMenu = function(data,self){
@@ -61,14 +51,6 @@ function Menu(){
 			}
 			catch(err){
 				console.log(idx)
-			}
-			if(ele.lunch){
-				try{
-					self.structure["lunch_groups"][ele.category_id].push(ele)
-				}
-				catch(err){
-					console.log(idx);
-				}
 			}
 
 			if(idx+1 == arr.length){
