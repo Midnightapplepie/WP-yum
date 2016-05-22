@@ -4,6 +4,7 @@
   "description": "webpage",
   "main": "xlApp.js",
   "scripts": {
+    "start":"nodemon xlApp.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +24,8 @@
     "mongodb": "^2.1.16",
     "node-sass": "^3.5.3",
     "node-sass-middleware": "^0.9.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
   }
 }
