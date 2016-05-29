@@ -6,7 +6,7 @@
 	<div class="home-img banner-img"></div>
 </div>
 
-<div class="view-width">
+<div class="view-width ta-ctn">
 	<div class="nav-icons-container">
 		<div class="nav-item">
 			<a href="/menu">
@@ -32,7 +32,7 @@
 			</a>
 		</div>		
 		<div class="nav-item">
-			<a id="xl-info" href="#res">
+			<a id="xl-info" href="/info">
 				<i class="fa fa-phone" aria-hidden="true"></i>
 				<i class="fa fa-map-marker" aria-hidden="true"></i>
 				<i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -43,14 +43,14 @@
 		</div>
 	</div>
 </div>
+<div id="reservation-card" class="po-fx">
+	{{> reservation_card}}
+</div>
+<script type="text/javascript">
+	$("#reserve").click(function(){
+		$("#reservation-card").toggleClass("top-0");
+		$("#reservation-card").toggleClass("darken-filter");
+	})
+</script>
 
 
-
-<!-- 		<div class="info">
-			<div class="info-phone">415-753-5678</div>
-			<div class="info-address">
-				250 West Portal Ave (between Vicente & 14th Ave.)<br>
-				San Francisco, CA 94127
-			</div>
-			<div class="info-map"></div>
-		</div> -->

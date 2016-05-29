@@ -1,4 +1,7 @@
 $beige: #c4beb0;
+$darkGrey: #2D2D2D;
+$lightGrey: #757575;
+$lightBlue: #039BE5;
 $black: rgb(33,33,33);
 
 /* added css */
@@ -11,7 +14,7 @@ ul{
 	padding: 0;
 	margin: 0;
 }
-
+.h
 .header-home-btn{
 	height: 100%;
 	width: auto;
@@ -25,22 +28,61 @@ ul{
 .h-auto{
 	height: auto;
 }
+
+.va-middle-abs{
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+}
+
 .mdl-layout{
 	.mdl-layout__header{
 		background-color: $black;
 
 		.mdl-layout__header-row{
+			position: relative;
 			text-align: center;
 			overflow: hidden;
 			padding: 0;
 
+			.item-filter{
+				position: relative;
+
+				.btn-container{
+					max-height: 50%;
+					padding: 0;
+					width: 100%;
+
+					.lunch-dinner-btn{
+						width: 50%;
+						float: left;
+						display: inline-block;
+
+						button{
+							background-color: $darkGrey;
+							color: black;
+
+							&:hover{
+								background-color: rgba(158,158,158,.2);
+							}
+						}
+					}
+
+					.active{
+						background-color: $lightGrey!important;
+						color: white!important;
+					}
+				}
+			}
+
 			.menu-bar-icon{
+				position: absolute;
 				width: auto;
 				top: 100%;
-				left: 50%;
 				height: 60%;
-				position: relative;
 				transition: 0.15s ease-out;
+				margin: auto;
 			}
 		}
 	}
@@ -57,22 +99,6 @@ ul{
 		background-size: cover;
 	}
 
-	.item-filter-btn{
-		text-align: center;
-		position: relative;
-		top: 50%;
-	}
-	.item-filter{
-		li{
-			width: 100%;
-			min-height: 50px;
-
-			button{
-				height: 100%;
-				width: 100%;
-			}
-		}
-	}
 	.mdl-layout__content{
 		width: 100%;
 		background-color: $beige;
@@ -87,11 +113,20 @@ ul{
 		.item-list{
 
 			.category{
-				display: none;
-			}
+				display: block;
 
-			.active-category{
-				display: block!important;
+				.title{
+					font-size: 2em;
+					text-transform: uppercase;
+					background: $darkGrey;
+					color: white;
+					text-align:center;
+					line-height: normal;
+					padding: 0.5em 0em;
+					width: 101%;
+    				right: 0.5%;
+    				position: relative;
+				}
 			}
 
 			li{

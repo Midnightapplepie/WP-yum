@@ -4,7 +4,7 @@
   "description": "webpage",
   "main": "xlApp.js",
   "scripts": {
-    "start":"nodemon xlApp.js",
+    "start": "nodemon xlApp.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,12 +18,14 @@
   },
   "homepage": "https://github.com/Midnightapplepie/WP-yum#readme",
   "dependencies": {
+    "body-parser": "^1.15.1",
     "csv": "^0.4.6",
     "express": "^4.13.4",
     "express-handlebars": "^3.0.0",
     "mongodb": "^2.1.16",
     "node-sass": "^3.5.3",
-    "node-sass-middleware": "^0.9.8"
+    "node-sass-middleware": "^0.9.8",
+    "nodemailer": "^2.4.1"
   },
   "devDependencies": {
     "nodemon": "^1.9.2"
