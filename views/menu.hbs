@@ -3,7 +3,9 @@
 </div>
 <div id="menu-bar" class="mg-top-30pc">
 	<div class="menu-bar-row mdl-grid">
-		<div class="mdl-cell mdl-cell--1-col"></div>
+		<div class="mdl-cell mdl-cell--1-col">
+			    	<i class="material-icons">list</i>
+		</div>
 		<div class="item-filter mdl-cell mdl-cell--2-col">
 			<div class="va-middle-abs btn-container">
 				<div class="lunch-dinner-btn"><button class="mdl-button mdl-js-button mdl-button--raised">Lunch</button></div>
@@ -11,14 +13,17 @@
 			</div>
 		</div>
 		<div class="mdl-cell mdl-cell--6-col ta">
-	    	<img class="menu-bar-icon" src="images/xl_logo.png"/>
+			<a href="/">
+	    		<img class="menu-bar-icon" src="images/xl_logo.png"/>
+	    	</a>
 	    </div>
 	    <div class="mdl-cell mdl-cell--3-col"></div>
 		</div>
 </div>
 
 <div class="mdl-grid menu-content">
-    <div class="mdl-cell mdl-cell--1-col"></div>
+    <div class="mdl-cell mdl-cell--1-col">
+    </div>
 	<div class="mdl-cell mdl-cell--2-col ">
 		<div id="menu-categories" class="mdl-shadow--2dp item-filter">
 			<div class="tabs">
@@ -58,6 +63,8 @@
 	</div>
 	<div class="mdl-cell mdl-cell--3-col"></div>
 </div>
+
+
 <script type="text/javascript">
 var Menu = {}
 Menu.topImage = $(".header-logo img");
@@ -65,6 +72,8 @@ Menu.page = $(document);
 Menu.barImage = $(".menu-bar-icon");
 Menu.menu = $(".item-filter");
 Menu.meunBarMgTop =  $("#menu-bar").css("margin-top").replace("px","")*1;
+Menu.mobileFilter = $("#menu-bar .mdl-cell--1-col i");
+Menu.mobileFilterBtns = $("#menu-categories button");
 
 Menu.page.scroll(function(){
 
@@ -133,5 +142,13 @@ Menu.menu.click(function(e){
 		updateMenu(ele,cat);
 	}
 
+})
+
+Menu.mobileFilter.click(function(){
+	$("#menu-categories").toggleClass("h-auto");
+})
+
+Menu.mobileFilterBtns.click(function(){
+	$("#menu-categories").toggleClass("h-auto");
 })
 </script>

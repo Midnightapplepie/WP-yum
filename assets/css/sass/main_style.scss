@@ -24,10 +24,15 @@ main
 	text-align: center;
 }
 
+.po-rel{
+	position: relative;
+}
 .po-fx{
 	position: fixed;
 }
-
+.right-0{
+	right: 0!important;
+}
 .h-auto{
 	height: auto!important;
 }
@@ -128,21 +133,36 @@ main
 
 	#about-us-msg{
 		width: 100%;
+		height: 100%;
 		position: absolute;
-		text-align: center;
-		color: white;
+		top: 0;
 		right: 100%;
-		bottom: 15%;
-		transition: 0.1s ease-in;
+		transition: 0.25s ease-in;
 
-		p{
-			width: 70%;
+		div{
+			width: 100%;
+			height: 100%;
 			margin: auto;
 			text-align: left;
 			background-color: rgba(0,0,0,0.7);
-			padding: 3em;
-			opacity: 0;
+			padding: 6em;
 			transition: 0.5s;
+
+			img{
+				width: 25%;
+				height: auto;
+				margin-right: 5%;
+				float: left;
+
+			}
+			p{
+				width: 100%;
+				height: 100%;
+				display: inline-block;
+				text-align: left;
+				overflow-y:auto;
+				color: white;
+			}
 		}
 	}
 
@@ -159,6 +179,17 @@ main
 	padding: 3em;
 	display: inline-block;
 	perspective: 1200px;
+
+	.nav-item.mobile-hover{
+		transform: translateZ(50px);
+		box-shadow: 0 6px 10px 0 rgba(0,0,0,.24),0 1px 18px 0 rgba(0,0,0,.22),0 3px 5px -1px rgba(0,0,0,.12);
+		transition: 0.3s;
+
+		p{
+			bottom: 15%;
+			transiton: 0.5s;
+		}
+	}
 
 	.nav-item{
 		height: auto;
@@ -208,6 +239,7 @@ main
 				left: 0;
 				right: 0;
 				bottom: 0;
+				transition: 0.5s;
 			}
 
 			*{
@@ -324,6 +356,12 @@ main
 	width: 100%;
 	height: 12%;
 
+	p{
+		color: white;
+		text-align: center;
+		padding: 1em;
+	}
+
 }
 
 
@@ -355,11 +393,18 @@ main
 			height: 100%;
 			bottom: 0;
 
+			img{
+				display: none;
+			}
+
 	    	p.op-1{
 	    		width: 100%;
-	    		height: 100%;
+	    		height: 90%;
+	    		margin: 0;
+	    		overflow-y: auto;
 	    	}
 		}
+
 		.nav-icons-container{
 			text-align: center;
 
@@ -369,6 +414,58 @@ main
 				float: none;
 				display: block;
 				margin: 2em 0;
+
+				.bg-blk img{
+					width: 22%;
+				}
+
+				.plate{
+					width: 30%;
+					height: 30%;
+					margin: 2em 0.5em 0 30%;
+
+					.outter-circle{
+						border: 0.3em solid white;
+					}
+				}
+
+				.chapsticks{
+					width: 5%;
+					height: 35%;
+					margin-top: 1.5em;
+
+					div{
+						border: 1.5px solid white;
+					}
+				}
+
+				i{
+					width: 33%;
+					height: auto;
+					margin-top: 0.2em;
+					font-size: 2.5em;
+				}
+			}
+		}
+	}
+}
+
+/* Force Header*/
+@media screen and (max-width: 1024px){
+	.mdl-layout__header{
+		display:initial!important;
+
+
+		.mdl-layout__header-row{
+			padding: 0;
+			height: 70px;
+		}
+
+		.header-logo{
+			margin: auto;
+
+			a{
+				height: 60%;
 			}
 		}
 	}

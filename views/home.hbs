@@ -12,7 +12,7 @@
 <div class="view-width ta-ctn">
 	<div class="nav-icons-container">
 		<div class="nav-item">
-			<a href="/menu">
+			<a id="xl-menu" href="/menu">
 				<div class="bg-blk">
 					<img src="images/xl_logo.png">
 					<p>MENU</p>
@@ -70,14 +70,70 @@
 	})
 
 	$("#about-us").click(function(){
-		$("#about-us-msg").toggleClass("btm-15pc");
-		$("#about-us-msg p").toggleClass("op-1");
+		$("#about-us-msg").toggleClass("right-0");
+		$("#about-us-msg div").toggleClass("op-1");
 	})
 
 	$("#xl-info").click(function(e){
 		e.preventDefault();
 		$(document.body).animate({scrollTop: $("#info").offset().top},500)
 	})
+
+	function setImgPos(){
+		var winW =  $(window).width();
+		if(winW < 850){
+			$(".home-img.banner-img").css("background-position", (winW - 850)*0.5 - 100 + "px center" );
+		}else{
+			$(".home-img.banner-img").css("background-position", "center center" );
+		}
+	}
+
+	setImgPos();
+	$(window).resize(setImgPos);
+
+	function mobileScrollAnimation(){
+		var iconHover = function(name,range1,range2){
+			var ele = $(name).closest(".nav-item"),
+			animated = false;
+			return function(){
+				if(animated === false && $(document).scrollTop() > range1 && $(document).scrollTop() < range2){
+					$(".mobile-hover").removeClass("mobile-hover");
+					ele.addClass("mobile-hover");
+					console.log("executed")
+					animated = true;
+					resetIconHover();
+				}
+			}
+
+		}
+
+		var menuIcon = iconHover("#xl-menu",200,500);
+		var resIcon = iconHover("#reserve",550,800);
+		var infoIcon = iconHover("#xl-info",850,1100);
+
+		function resetIconHover(){
+			var navItems = $(".nav-item").filter(function(){return !$(this).hasClass("mobile-hover")})
+			$.each(navItems,function(i,v){
+				if($(v).find("a").attr("id") === "xl-menu"){
+					menuIcon = iconHover("#xl-menu",200,500);
+				}
+				if($(v).find("a").attr("id") === "reserve"){
+					resIcon = iconHover("#reserve",550,800);
+				}
+				if($(v).find("a").attr("id") === "xl-info"){
+					infoIcon = iconHover("#xl-info",850,1100);
+				}
+			})
+		}
+
+		$(document).scroll(function(){
+			menuIcon();
+			resIcon();
+			infoIcon();
+		});
+	}
+
+	mobileScrollAnimation();
 </script>
 
 
