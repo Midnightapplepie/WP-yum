@@ -1,6 +1,8 @@
 $(document).ready(function(){
-	var svBtn = $("#sv-btn");
-	svBtn.click(function(){
+	var InfoPage = {};
+
+	InfoPage.svBtn = $("#sv-btn");
+	InfoPage.svBtn.click(function(){
 		$(".map").toggleClass("top-ng-100pc");
 	})
 
@@ -11,7 +13,13 @@ $(document).ready(function(){
 		function success(pos){
 			latLng.lat = pos.coords.latitude;
 			latLng.lng = pos.coords.longitude;
-			window.open(gmapDirUrl + latLng.lat + "," + latLng.lng + "/" + "37.738520,-122.468800");
+			var url = gmapDirUrl + latLng.lat + "," + latLng.lng + "/" + "37.738520,-122.468800";
+			var newWind = window.open(url);
+			
+			//chek if user have popup blocked;
+			if(!newWind){
+				alert("Your browser have prevented us opening google map, please allow our site opening new window on your browser. Thanks!");
+			}
 		}
 		function error(pos){
 			alert("Sorry, unable to get your current location, please enable location service on your device");
@@ -20,9 +28,28 @@ $(document).ready(function(){
 		navigator.geolocation.getCurrentPosition(success,error);
 	}
 
-	var dirBtn = $("#dir-btn");
-	dirBtn.click(function(e){
+	InfoPage.dirBtn = $("#dir-btn");
+	InfoPage.dirBtn.click(function(e){
 		e.preventDefault();
 		getDirection();
 	})
+
+
+	InfoPage.today = new Date().getDay();
+	InfoPage.highLightDay = function(day){
+		if(day === 0){
+			$(".sun").addClass("today");
+		}
+		if(day === 1){
+			$(".mon").addClass("today");
+		}
+		if(day > 1 && day < 5){
+			$(".tue-thur").addClass("today");
+		}
+		if(day >= 5){
+			$(".fri-sat").addClass("today");
+		}
+	};
+
+	InfoPage.highLightDay(InfoPage.today);
 })

@@ -35,7 +35,10 @@ app.set('view engine', 'hbs');
 app.set('views',__dirname + '/views');
 
 app.get("/",function(req,res){
-	res.render("home");
+	var storeInfo = require("./assets/js/storeInfo.js");
+	console.log(storeInfo)
+
+	res.render("home",{info: storeInfo});
 })
 
 app.get("/menu",function(req,res){
@@ -43,11 +46,6 @@ app.get("/menu",function(req,res){
 	res.render("menu",{data: app.locals.menu.structure});
 })
 
-app.get("/info",function(req,res){
-	var storeInfo = require("./assets/js/storeInfo.js");
-	console.log(storeInfo)
-	res.render("info",{info: storeInfo})
-})
 
 app.post("/make-reservation",function(req,res){
 	var reservation = req.body;

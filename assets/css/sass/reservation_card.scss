@@ -17,8 +17,26 @@
 	height:100%;
 	text-align: center;
 	top: 100%;
+	transition: 0.2s ease-in;
+	z-index: 1;
 
 	.mdl-card{
 		display: inline-block;
+		width: 400px;
+		margin-top: 200px;
+
+		.mdl-card__title{
+			position: relative;
+			
+			.btn-container{
+				position: absolute;
+			    right: 0;
+			    height: 100%;
+			    width: 100px;
+			    top: 0;
+			    display: inline-flex;
+			    align-items: center;
+			}
+		}
 	}
 }

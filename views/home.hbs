@@ -1,9 +1,12 @@
-
-<div class="home-img-container h-60pc">
+<div class="home-img-container h-70vh mdl-shadow--4dp">
 	<div class="home-img filter"></div>
 	<div class="left-filter filter"></div>
 	<div class="right-filter filter"></div>
 	<div class="home-img banner-img"></div>
+	<div id="about-us-msg">
+		{{> about_us}}
+	</div>
+	<button id="about-us" class="mdl-button mdl-js-button">About Us</button>
 </div>
 
 <div class="view-width ta-ctn">
@@ -30,12 +33,13 @@
 				</div>
 				<p>RESERVATION</p>
 			</a>
-		</div>		
+		</div>
+
 		<div class="nav-item">
-			<a id="xl-info" href="/info">
-				<i class="fa fa-phone" aria-hidden="true"></i>
-				<i class="fa fa-map-marker" aria-hidden="true"></i>
-				<i class="fa fa-clock-o" aria-hidden="true"></i>
+			<a id="xl-info" href="#info">
+				<i class="material-icons first">phone</i>
+				<i class="material-icons second">place</i>
+				<i class="material-icons third">access_time</i>
 				<div class="info-i">
 					<p>INFO</p>
 				</div>
@@ -43,13 +47,36 @@
 		</div>
 	</div>
 </div>
+<div id="info">
+	{{> info}}
+</div>
 <div id="reservation-card" class="po-fx">
 	{{> reservation_card}}
 </div>
+
 <script type="text/javascript">
-	$("#reserve").click(function(){
+	function toggleReservationCard(){
 		$("#reservation-card").toggleClass("top-0");
 		$("#reservation-card").toggleClass("darken-filter");
+	}
+
+	$("#reserve").click(toggleReservationCard);
+	$("#close-res").click(toggleReservationCard);
+	$("#reservation-card").click(function(e){
+		var card = document.getElementById("reservation-card");
+		if(e.target === card && $(card).hasClass("top-0")){
+			toggleReservationCard();
+		}
+	})
+
+	$("#about-us").click(function(){
+		$("#about-us-msg").toggleClass("btm-15pc");
+		$("#about-us-msg p").toggleClass("op-1");
+	})
+
+	$("#xl-info").click(function(e){
+		e.preventDefault();
+		$(document.body).animate({scrollTop: $("#info").offset().top},500)
 	})
 </script>
 

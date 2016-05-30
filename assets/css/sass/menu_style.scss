@@ -25,10 +25,6 @@ ul{
 	margin-top: 30%;
 }
 
-.h-auto{
-	height: auto;
-}
-
 .va-middle-abs{
 	position: absolute;
 	margin: auto;
@@ -37,10 +33,14 @@ ul{
 }
 
 .mdl-layout{
-	.mdl-layout__header{
+	#menu-bar{
 		background-color: $black;
+		width: 100%;
+		min-height: 64px;
+		z-index: 1;
 
-		.mdl-layout__header-row{
+		.menu-bar-row{
+			height: 64px;
 			position: relative;
 			text-align: center;
 			overflow: hidden;
@@ -99,15 +99,21 @@ ul{
 		background-size: cover;
 	}
 
-	.mdl-layout__content{
+	.mdl-layout__content .menu-content{
+
 		width: 100%;
 		background-color: $beige;
+		padding-top: 0px;
 
 		.mdl-cell{
 			margin-top: 0px;
 		}
-		.mdl-grid{
-			padding-top: 0px;
+
+		#menu-categories{
+			button{
+				width: 100%;
+				text-align: left;
+			}
 		}
 
 		.item-list{
@@ -162,6 +168,48 @@ ul{
 					}
 				}
 			}
+		}
+	}
+}
+
+@media screen and (max-width: 850px){
+	.menu-bar-row{
+		.mdl-cell--1-col, .mdl-cell--3-col{
+			display: none;
+		}
+
+		.mdl-cell--2-col,.mdl-cell--6-col{
+			width: 50%;
+			float: left;
+			margin: 0;
+		}
+
+		.mdl-cell--6-col img{
+			right: 2em;
+		}
+	}
+	.menu-content{
+		.mdl-cell--1-col, .mdl-cell--3-col{
+			display: none;
+		}
+		.mdl-cell--2-col{
+			width: 100%;
+			z-index: 1;
+			left: 0;
+			background-color: $darkGrey;
+
+			li{
+				display: inline-block;
+
+				button{
+					color: white;
+				}
+			}
+
+		}
+
+		.item-list{
+			width: 100%;
 		}
 	}
 }

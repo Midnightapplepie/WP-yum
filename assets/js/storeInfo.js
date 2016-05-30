@@ -5,10 +5,10 @@ var storeInfo = function(){
 	return {
 		businessHours: [
 			{day:"",lunchTime:"Lunch",dinnerTime:"Dinner"},
-            {day:"Monday",lunchTime:"closed",dinnerTime:dinnerHour},
-            {day:"Thuesday - Thursday",lunchTime:lunchHour,dinnerTime:dinnerHour},
-            {day:"Friday - Saturday",lunchTime:lunchHour,dinnerTime:dinnerHourPlus},
-            {day:"Sunday",lunchTime:"closed",dinnerTime:dinnerHourPlus}
+            {day:"Monday",lunchTime:"closed",dinnerTime:dinnerHour,class:"mon"},
+            {day:"Thuesday - Thursday",lunchTime:lunchHour,dinnerTime:dinnerHour,class:"tue-thur"},
+            {day:"Friday - Saturday",lunchTime:lunchHour,dinnerTime:dinnerHourPlus,class:"fri-sat"},
+            {day:"Sunday",lunchTime:"closed",dinnerTime:dinnerHour,class:"sun"}
 		],
 
 		phone: "(415) 753-5678",
