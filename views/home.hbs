@@ -127,9 +127,11 @@
 		}
 
 		$(document).scroll(function(){
-			menuIcon();
-			resIcon();
-			infoIcon();
+			if($(window).width() < 851){
+				menuIcon();
+				resIcon();
+				infoIcon();
+			}
 		});
 	}
 
