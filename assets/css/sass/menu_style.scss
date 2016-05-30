@@ -46,6 +46,10 @@ ul{
 			overflow: hidden;
 			padding: 0;
 
+			i{
+				display: none;
+			}
+
 			.item-filter{
 				position: relative;
 
@@ -196,7 +200,7 @@ ul{
 
 			i{
 				line-height: 64px;
-				display: block;
+				display: block!important;
 				font-size: 2em;
 				color: white;
 			}
