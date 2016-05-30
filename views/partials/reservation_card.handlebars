@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="/css/sass_compiled/reservation_card.css">
+<div class="mdl-card mdl-shadow--4dp">
+  <div class="mdl-card__title">
+     <h2 class="mdl-card__title-text">Reservation</h2>
+     <div class="btn-container">
+       <button id="close-res" class="mdl-button mdl-js-button mdl-button--raised">Close</button>
+     </div>
+  </div>
+  <div class="mdl-card__media">
+    <img >
+  </div>
+  <div class="mdl-card__supporting-text">
+    Make a reservation and we will send you a text message to confirm your reservation.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+      <form id="reservation-form" action="/make-reservation" method="post">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="res-name">
+            <label class="mdl-textfield__label" for="res-name">First & Last Name</label>
+          </div>          
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="tel" id="res-phone">
+            <label class="mdl-textfield__label" for="res-phone">Phone: (xxx) xxx - xxxx</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="number" id="res-party-size" min="1" max="30">
+            <label class="mdl-textfield__label" for="res-party-size">Party Size, Capacity: 30</label>
+            <span class="mdl-textfield__error">Your party is over our capacity</span>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="dp-b" id="res-date" type="date" name="date">
+          </div>
+          <div class="mdl-textfield mdl-js-textfield">
+            <p>Time: </p>
+            <select id="res-hour">
+              <option>12</option>
+              <option>1</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+            </select>          
+            <select id="res-min">
+              <option>00</option>
+              <option>15</option>
+              <option>30</option>
+              <option>45</option>
+            </select>
+          </div>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Submit</button>
+      </form>
+  </div>
+</div>
+<script type="text/javascript">
+  $("#reservation-form").submit(function(e){
+    e.preventDefault();
+    var data = {};
+    data.name = $("#res-name").val();
+    data.phone = $("#res-phone").val();
+    data.partySize = $("#res-party-size").val();
+    data.date = $("#res-date").val();
+    data.hour = $("#res-hour option:selected").val();
+    data.min = $("#res-min option:selected").val();
+
+    $.ajax({
+      method: "POST",
+      url: "./make-reservation",
+      data:  data,
+      dataType: "json"
+    }).done(function(response){
+      alert(response)
+    })
+  })
+
+
+</script>
