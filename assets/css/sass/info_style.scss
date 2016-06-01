@@ -1,3 +1,5 @@
+@import "main_style";
+
 .top-ng-100pc{
 	top: -100%!important;
 	transition: 0.2s ease-in;
@@ -36,6 +38,24 @@
 
 .biz-hour-mobile{
 	display: none;
+}
+
+
+#dir-link{
+	display: none;
+}
+
+.show-dir-link{
+	position: absolute;
+	display: block!important;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $beige;
 }
 
 @media screen and (max-width: 850px){

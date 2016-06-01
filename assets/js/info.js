@@ -14,12 +14,8 @@ $(document).ready(function(){
 			latLng.lat = pos.coords.latitude;
 			latLng.lng = pos.coords.longitude;
 			var url = gmapDirUrl + latLng.lat + "," + latLng.lng + "/" + "37.738520,-122.468800";
-			var newWind = window.open(url);
-			
-			//chek if user have popup blocked;
-			if(!newWind){
-				alert("Your browser have prevented us opening google map, please allow our site opening new window on your browser. Thanks!");
-			}
+			$("#dir-link a").attr("href",url);
+			$("#dir-link").toggleClass("show-dir-link");
 		}
 		function error(pos){
 			alert("Sorry, unable to get your current location, please enable location service on your device");
@@ -52,4 +48,8 @@ $(document).ready(function(){
 	};
 
 	InfoPage.highLightDay(InfoPage.today);
+
+	$("#dir-link a").click(function(){
+		$("#dir-link").toggleClass("show-dir-link")
+	})
 })
