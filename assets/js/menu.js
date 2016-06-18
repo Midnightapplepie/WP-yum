@@ -13,27 +13,28 @@ function Menu(){
 		"pork":[],
 		"chicken":[],
 		"vegetables":[],
-		"mein_fun":[],
-		"fried_rice":[],
+		"mein/fun":[],
+		"fried rice":[],
 		"rice":[]
 	};
 
 	this.generateMenu = function(data,self){
 
 		var MenuItem = function(array){
-			var price = array[5].replace(/\$/g,"").split("/");
+			// var price = array[5].replace(/\$/g,"").split("/");
+			var price = array[5];
 			var lunch_price = array[9];
-			if(price.length > 1){
+			// if(price.length > 1){
 
-				this.sizes = true;
-				this.price = {s: price[0]*1,m: price[1]*1, l:price[2]*1 }
-			}else if(price[0]*1){
-				this.price = price[0]*1;
-			}else{
-				this.price = price[0];
-			}
-
-			this.spicy = array[0] == ""? false : true;
+			// 	this.sizes = true;
+			// 	this.price = {s: price[0]*1,m: price[1]*1, l:price[2]*1 }
+			// }else if(price[0]*1){
+			// 	this.price = price[0]*1;
+			// }else{
+			// 	this.price = price[0];
+			// }
+			this.price = price;
+			this.spicy = array[0] == ""? false : "Spicy";
 			this.category_id = array[1];
 			this.category_name = array[2];
 			this.vegetarian = array[3] ==""?false : true;

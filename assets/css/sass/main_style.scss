@@ -212,7 +212,7 @@ main
 		};
 
 
-		#reserve:hover{
+		#yelp:hover{
 
 			.chapsticks #chop{
 				transform: rotate(-15deg);
@@ -310,8 +310,8 @@ main
 			}
 
 		}
-
-		#xl-info:hover{
+   
+/*		#xl-info:hover{
 			i{
 				animation-name: flipY;
 				animation-timing-function: linear;
@@ -331,7 +331,7 @@ main
 				animation-delay: 0.5s;
 			}
 		}
-
+*/
 		i,.info-i{
 			color: white;
 			width: 50%;
